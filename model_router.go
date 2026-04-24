@@ -16,7 +16,7 @@ type ModelRouter struct {
 func NewModelRouter() *ModelRouter {
 	return &ModelRouter{
 		mapping: map[ModelLevel]string{
-			LevelFast:   "deepseek-q2",
+			LevelFast:   "qwen-local",
 			LevelNormal: "deepseek-q4",
 			LevelBest:   "deepseek-q8",
 		},
@@ -53,4 +53,3 @@ func (r *ModelRouter) Get(level ModelLevel) string {
 	}
 	return r.mapping[LevelNormal]
 }
-
