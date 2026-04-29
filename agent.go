@@ -60,26 +60,8 @@ func WithToolManager(m ToolManager) Option {
 	}
 }
 
-// WithMemoryManager sets memory implementation for the agent.
-func WithMemoryManager(m MemoryManager) Option {
-	return func(a *Agent) {
-		if m != nil {
-			a.mem = m
-		}
-	}
-}
-
 // WithMemory sets AgentMemory implementation directly.
 func WithMemory(m AgentMemory) Option {
-	return func(a *Agent) {
-		if m != nil {
-			a.mem = m
-		}
-	}
-}
-
-// WithEnterpriseMemory is an alias of WithMemory for enterprise memory implementations.
-func WithEnterpriseMemory(m AgentMemory) Option {
 	return func(a *Agent) {
 		if m != nil {
 			a.mem = m

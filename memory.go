@@ -12,6 +12,3 @@ type AgentMemory interface {
 	Build(ctx context.Context, sessionID string, userInput string) ([]Message, error)
 	Persist(ctx context.Context, sessionID string, msgs []Message) error
 }
-
-// MemoryManager is kept as a backward-compatible alias.
-type MemoryManager = AgentMemory
